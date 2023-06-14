@@ -2,7 +2,6 @@ import { type GetServerSidePropsContext } from "next";
 import { getSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
-import { becomeBuskerSchema } from "~/server/api/routers/buskers";
 import { api } from "~/utils/api";
 
 const BecomeBusker = () => {
@@ -11,15 +10,6 @@ const BecomeBusker = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    console.log(e);
-
-    try {
-      // becomeBuskerSchema.parse(description);
-    } catch (e) {
-      console.log(e);
-    }
-
     handleBecomeBusker.mutate({ description });
   };
 
